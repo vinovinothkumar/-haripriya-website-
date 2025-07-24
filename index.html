@@ -1,0 +1,665 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Haripriya &amp; Co. - Imported Coal &amp; Bricks Supplier&lt;/title&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts: Inter --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- React &amp; Babel for JSX --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Custom Tailwind Theme Configuration --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tailwind.config = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>theme: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>extend: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>fontFamily: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>sans: ['Inter', 'sans-serif'],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>colors: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>border: 'hsl(214.3, 31.8%, 91.4%)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>muted: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>DEFAULT: 'hsl(210, 40%, 96.1%)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>foreground: 'hsl(215.4, 16.3%, 46.9%)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>primary: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>DEFAULT: '#D32F2F', // A deeper, more trustworthy red</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'light': '#FFCDD2',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'dark': '#B71C1C',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>secondary: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>DEFAULT: '#FF7A00', // The vibrant orange for accents</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'coal-dark': '#1E293B',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'coal-medium': '#475569',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'coal-light': '#F1F5F9',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>card: 'hsl(0, 0%, 100%)',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>boxShadow: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>card: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'card-hover': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #F8FAFC;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero-bg {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1559824724-4665413c3a64?q=80&amp;w=1920&amp;auto=format&amp;fit=crop');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-size: cover;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-position: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.page-header-bg {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-image: linear-gradient(to right, rgba(29, 41, 59, 0.8), rgba(29, 41, 59, 0.7)), url('https://images.unsplash.com/photo-1517826963953-320c28271a51?q=80&amp;w=1920&amp;auto=format&amp;fit=crop');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-size: cover;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-position: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="root"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script type="text/babel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const { useState, useEffect } = React;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- SVG Icon Components (Corrected) ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const PhoneIcon = ({ className }) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"&gt;&lt;/path&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const MenuIcon = ({ className }) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;line x1="4" x2="20" y1="12" y2="12"&gt;&lt;/line&gt;&lt;line x1="4" x2="20" y1="6" y2="6"&gt;&lt;/line&gt;&lt;line x1="4" x2="20" y1="18" y2="18"&gt;&lt;/line&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const XIcon = ({ className }) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;path d="M18 6 6 18"&gt;&lt;/path&gt;&lt;path d="m6 6 12 12"&gt;&lt;/path&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ChevronRightIcon = ({ className }) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;path d="m9 18 6-6-6-6"/&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const QualityIcon = ({className}) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"&gt;&lt;/polygon&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ReliabilityIcon = ({className}) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;path d="M21.2 15c.7-1.2 1-2.5.7-3.9-.6-2.4-2.2-4.5-4.4-5.9-1.4-.9-3-1.6-4.5-1.9-2.5-.5-5,.3-6.8,2.1-1.8,1.8-2.6,4.3-2.1,6.8.5,2.5,2.1,4.7,4.3,6.1 1.4.9,3,1.6,4.6,1.9 2.5.5,5-.3,6.8-2.1.8-1,1.3-2.1,1.5-3.3M12 8v4l2 2"&gt;&lt;/path&gt;&lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ExpertiseIcon = ({className}) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"&gt;&lt;/path&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const BuildingIcon = ({className}) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;rect x="4" y="4" width="16" height="16" rx="2" ry="2"&gt;&lt;/rect&gt;&lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;&lt;line x1="12" y1="8" x2="12" y2="16"&gt;&lt;/line&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const FactoryIcon = ({className}) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"&gt;&lt;/path&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const HomeIcon = ({className}) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"&gt;&lt;/path&gt;&lt;polyline points="9 22 9 12 15 12 15 22"&gt;&lt;/polyline&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const HardHatIcon = ({className}) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"&gt;&lt;/path&gt;&lt;path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"&gt;&lt;/path&gt;&lt;path d="M4 15v-3a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v3"&gt;&lt;/path&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const MailIcon = ({className}) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;rect width="20" height="16" x="2" y="4" rx="2"&gt;&lt;/rect&gt;&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"&gt;&lt;/path&gt;&lt;/svg&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const MapPinIcon = ({className}) =&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;&lt;path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"&gt;&lt;/path&gt;&lt;circle cx="12" cy="10" r="3"&gt;&lt;/circle&gt;&lt;/svg&gt;;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Header Component ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const Header = ({ activePath, onNavClick }) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const [isMenuOpen, setIsMenuOpen] = useState(false);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const navigation = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ name: "Home", href: "/" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ name: "About", href: "/about" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ name: "Products", href: "/products" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ name: "Industries", href: "/industries" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ name: "Gallery", href: "/gallery" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ name: "Contact", href: "/contact" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const isActive = (href) =&gt; activePath === href;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const handleLinkClick = (href, e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>onNavClick(href);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setIsMenuOpen(false);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;header className="bg-white shadow-card border-b border-border sticky top-0 z-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="flex justify-between items-center h-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="flex-shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="/" onClick={(e) =&gt; handleLinkClick('/', e)} className="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div className="w-12 h-12 bg-gradient-to-br from-secondary to-primary-dark rounded-lg flex items-center justify-center shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;span className="text-white font-bold text-2xl"&gt;H&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h1 className="text-2xl font-bold text-coal-dark"&gt;Haripriya &amp; Co.&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p className="text-sm text-muted-foreground -mt-1"&gt;Imported Coal &amp; Bricks&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;nav className="hidden lg:flex items-center space-x-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>{navigation.map((item) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;a key={item.name} href={item.href} onClick={(e) =&gt; handleLinkClick(item.href, e)}</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>className={`px-1 py-2 text-sm font-semibold transition-colors flex items-center gap-2 ${isActive(item.href) ? "text-primary border-b-2 border-primary" : "text-coal-medium hover:text-primary"}`}&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>{item.name}</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="hidden lg:flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="https://wa.me/919444139814?text=Hi%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" rel="noopener noreferrer"</p>
+<p class="p1"><span class="Apple-converted-space">                                  </span>className="inline-flex items-center justify-center rounded-lg text-sm font-semibold text-white h-11 px-6 py-2 bg-gradient-to-r from-secondary to-primary hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                  </span>Request a Quote</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="lg:hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button onClick={() =&gt; setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu" className="inline-flex items-center justify-center rounded-md p-2 text-coal-medium hover:bg-muted hover:text-primary"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>{isMenuOpen ? &lt;XIcon className="h-6 w-6" /&gt; : &lt;MenuIcon className="h-6 w-6" /&gt;}</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>{isMenuOpen &amp;&amp; (</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="lg:hidden py-4 border-t border-border"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;nav className="flex flex-col space-y-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>{navigation.map((item) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;a key={item.name} href={item.href} onClick={(e) =&gt; handleLinkClick(item.href, e)}</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>className={`flex items-center gap-3 px-3 py-3 rounded-md text-base font-semibold transition-colors ${isActive(item.href) ? "text-primary bg-primary/10" : "text-coal-medium hover:text-primary hover:bg-muted"}`}&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                          </span>{item.name}</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div className="px-3 pt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;a href="https://wa.me/919444139814?text=Hi%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" rel="noopener noreferrer"</p>
+<p class="p1"><span class="Apple-converted-space">                                          </span>className="w-full inline-flex items-center justify-center rounded-lg text-sm font-semibold text-white h-11 px-4 py-2 bg-gradient-to-r from-secondary to-primary hover:opacity-90"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                          </span>Request a Quote</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>)}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Page Header Component ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const PageHeader = ({ title, subtitle }) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="page-header-bg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="bg-coal-dark bg-opacity-70 py-16 sm:py-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight"&gt;{title}&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p className="mt-4 max-w-3xl mx-auto text-lg sm:text-xl text-gray-300"&gt;{subtitle}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Homepage ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const HomePage = ({ onNavClick }) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const features = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ Icon: QualityIcon, title: "Superior Quality Materials", description: "We source only the finest imported coal and manufacture durable, high-strength bricks to ensure the best results for your projects." },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ Icon: ReliabilityIcon, title: "Reliable &amp; On-Time Supply", description: "Our robust logistics network ensures that your material requirements are met consistently and delivered promptly, every time." },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ Icon: ExpertiseIcon, title: "Decades of Industry Expertise", description: "With years of experience serving the brick industry, we understand your needs and provide expert guidance and support." }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;section className="hero-bg text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="bg-black bg-opacity-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight"&gt;Your Trusted Partner for &lt;br /&gt;&lt;span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-secondary"&gt;Quality Coal &amp; Bricks&lt;/span&gt;&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-200"&gt;Powering India's brick industry with premium imported coal and high-strength bricks. Reliability and excellence in every supply.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;a href="/products" onClick={(e) =&gt; {e.preventDefault(); onNavClick('/products')}} className="inline-flex items-center justify-center rounded-lg text-base font-semibold text-white h-12 px-8 py-3 bg-gradient-to-r from-secondary to-primary hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"&gt;Explore Our Products&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;a href="/contact" onClick={(e) =&gt; {e.preventDefault(); onNavClick('/contact')}} className="inline-flex items-center justify-center rounded-lg text-base font-semibold text-coal-dark bg-white h-12 px-8 py-3 hover:bg-gray-200 hover:-translate-y-0.5 transition-all duration-300"&gt;Contact Us&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;section className="py-16 sm:py-24 bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h2 className="text-base font-semibold text-primary tracking-wider uppercase"&gt;Who We Are&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p className="mt-2 text-3xl font-extrabold text-coal-dark tracking-tight sm:text-4xl"&gt;Trusted Supplier for the Brick Industry&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p className="mt-4 max-w-3xl mx-auto text-xl text-coal-medium"&gt;Haripriya &amp; Co. is a Chennai-based leader in importing and supplying high-grade coal and manufacturing durable bricks, dedicated to fueling the growth of industries across India.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>{features.map(feature =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div key={feature.title} className="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div className="flex items-center justify-center h-16 w-16 rounded-xl bg-primary text-white mx-auto"&gt;&lt;feature.Icon className="h-8 w-8" /&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="mt-5 text-xl font-bold text-coal-dark"&gt;{feature.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p className="mt-2 text-base text-coal-medium"&gt;{feature.description}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;section className="py-16 sm:py-24 bg-coal-light"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="text-center mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h2 className="text-base font-semibold text-primary tracking-wider uppercase"&gt;Our Products&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p className="mt-2 text-3xl font-extrabold text-coal-dark tracking-tight sm:text-4xl"&gt;The Foundation of Your Success&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="bg-white rounded-xl shadow-card overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;img src="https://images.unsplash.com/photo-1622357170435-434042837334?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Piles of imported coal" className="w-full h-64 object-cover" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div className="p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-2xl font-bold text-coal-dark"&gt;Imported Coal&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p className="mt-3 text-coal-medium"&gt;We provide a range of high-GCV imported coal from Indonesia, South Africa, and Australia, ensuring consistent heat and optimal performance for your brick kilns.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;a href="/products" onClick={(e) =&gt; {e.preventDefault(); onNavClick('/products')}} className="mt-6 inline-flex items-center font-semibold text-primary hover:text-primary-dark"&gt;View Coal Types &lt;ChevronRightIcon className="ml-1 w-5 h-5" /&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="bg-white rounded-xl shadow-card overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;img src="https://images.unsplash.com/photo-1559824724-4665413c3a64?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Stack of red bricks" className="w-full h-64 object-cover" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div className="p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-2xl font-bold text-coal-dark"&gt;Durable Bricks&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p className="mt-3 text-coal-medium"&gt;Our bricks are manufactured for superior strength, durability, and consistency, meeting the rigorous demands of modern construction projects.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;a href="/products" onClick={(e) =&gt; {e.preventDefault(); onNavClick('/products')}} className="mt-6 inline-flex items-center font-semibold text-primary hover:text-primary-dark"&gt;Explore Brick Specs &lt;ChevronRightIcon className="ml-1 w-5 h-5" /&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;section className="bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-4xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 className="text-3xl font-extrabold text-coal-dark sm:text-4xl"&gt;&lt;span className="block"&gt;Ready to build with the best?&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p className="mt-4 text-lg leading-6 text-coal-medium"&gt;Let's discuss your requirements. Get a no-obligation quote from our team today.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="/contact" onClick={(e) =&gt; {e.preventDefault(); onNavClick('/contact')}} className="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark sm:w-auto"&gt;Get a Free Quote&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- About Us Page ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const AboutPage = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">             </span>const milestones = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ year: "1995", title: "Inception", description: "Haripriya &amp; Co. is founded to modernize India's brick industry with superior energy solutions." },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ year: "2002", title: "First Manufacturing Plant", description: "We transition from supplier to producer, commissioning a state-of-the-art brick plant." },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ year: "2008", title: "Pioneering Zig-Zag Tech", description: "We become one of the first to adopt eco-friendly Zig-Zag kiln technology, reducing our carbon footprint." },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ year: "2012", title: "ISO 9001 Certification", description: "Our commitment to quality is formally recognized, validating our rigorous management systems." },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ year: "2017", title: "Expansion into Engineering Bricks", description: "We launch a dedicated line for high-strength engineering bricks for infrastructure projects." },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ year: "Today", title: "A Legacy of Excellence", description: "Serving clients across India, contributing to the nation's most iconic projects." }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return(</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;PageHeader title="About Haripriya &amp; Co." subtitle="Powering Progress, Building Foundations Since 1995" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="py-16 sm:py-24 bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="grid lg:grid-cols-2 gap-12 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;h2 className="text-base font-semibold text-primary tracking-wider uppercase"&gt;Our Story&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p className="mt-2 text-3xl font-extrabold text-coal-dark tracking-tight sm:text-4xl"&gt;A Vision to Revolutionize an Industry&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p className="mt-4 text-lg text-coal-medium"&gt;Our story begins in the early 1990s, a transformative era for India's economy. The nation's brick manufacturing sector, a cornerstone of its development, was largely defined by antiquated and inefficient practices. Our founder saw a fundamental disconnect: brick manufacturers struggled with inconsistent, low-quality fuel, while fuel suppliers lacked a deep understanding of the brick-making process.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p className="mt-4 text-lg text-coal-medium"&gt;The vision for Haripriya &amp; Co. was born from this insight: to create an integrated enterprise that would master both sides of the equation. Our mission was twofold: to establish a reliable supply chain of high-grade thermal coal, and to build a new generation of brick manufacturing plants that would serve as a model for the industry—facilities that would leverage this superior fuel with the most advanced, energy-efficient production technologies available.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="w-full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                     </span>&lt;img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Modern brick house" className="rounded-xl shadow-card w-full h-auto" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="py-16 sm:py-24 bg-coal-light"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h2 className="text-3xl font-extrabold text-coal-dark tracking-tight sm:text-4xl"&gt;Our Journey of Growth &amp; Innovation&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p className="mt-4 max-w-2xl mx-auto text-xl text-coal-medium"&gt;Our history is a timeline of purpose-driven growth, marked by strategic investments in technology, quality, and sustainability.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="mt-16 relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-gray-300 hidden md:block" aria-hidden="true"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>{milestones.map((milestone, index) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div key={milestone.year} className="md:grid md:grid-cols-2 md:gap-8 items-center relative mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div className={`md:text-right ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8 md:order-2'}`}&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div className="inline-block bg-primary text-white rounded-full px-4 py-1 font-bold"&gt;{milestone.year}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;h3 className="mt-2 text-2xl font-bold text-coal-dark"&gt;{milestone.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;p className="mt-1 text-coal-medium"&gt;{milestone.description}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div className={`h-8 w-8 bg-white border-4 border-primary rounded-full absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 hidden md:block`}&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div className={`${index % 2 === 0 ? 'md:pl-8' : 'md:pr-8'}`}&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Products Page ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ProductsPage = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const coalData = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ type: 'Indonesian Steam Coal', gcv: '4,200–5,000', attributes: 'Steady flame, ideal for kilns' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ type: 'South African Coal', gcv: '5,500–6,000', attributes: 'High energy, low ash' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ type: 'Australian Thermal', gcv: '5,500–6,000', attributes: 'Consistent heat output' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ type: 'Petcoke', gcv: '7,000–8,000', attributes: 'High GCV, use as permitted' }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const brickData = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ class: 'Class 7.5', strength: '7.5 N/mm²', absorption: '20%', uses: 'Internal walls, compound walls' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ class: 'Class 10', strength: '10.0 N/mm²', absorption: '20%', uses: 'Load-bearing external walls, columns' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ class: 'Class 15', strength: '15.0 N/mm²', absorption: '15%', uses: 'Engineering works, foundations' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ class: 'Class 20', strength: '20.0 N/mm²', absorption: '15%', uses: 'Heavy engineering, below DPC' }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;PageHeader title="Our Products" subtitle="Delivering superior quality fuels and bricks for every industrial need." /&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{/* Imported Coal Section */}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="py-16 sm:py-24 bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="grid lg:grid-cols-2 gap-12 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;h2 className="text-base font-semibold text-primary tracking-wider uppercase"&gt;Industrial Fuels&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p className="mt-2 text-3xl font-extrabold text-coal-dark tracking-tight sm:text-4xl"&gt;High-Performance Imported Coal&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p className="mt-4 text-lg text-coal-medium"&gt;The efficiency, cost-effectiveness, and environmental compliance of any industrial thermal process are fundamentally determined by the quality of its fuel. We provide a meticulously sourced portfolio of industrial fuels, each selected for its optimal calorific value and consistent combustion characteristics.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div className="mt-8 overflow-x-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;table className="min-w-full divide-y divide-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;thead className="bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Coal Type&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;GCV (kcal/kg)&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Key Attributes&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;tbody className="bg-white divide-y divide-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>{coalData.map(coal =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;tr key={coal.type}&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                        </span>&lt;td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;{coal.type}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                        </span>&lt;td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;{coal.gcv}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                        </span>&lt;td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;{coal.attributes}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="w-full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                     </span>&lt;img src="https://images.unsplash.com/photo-1622357170435-434042837334?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Close up of coal" className="rounded-xl shadow-card w-full h-auto" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{/* Bricks Section */}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="py-16 sm:py-24 bg-coal-light"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="grid lg:grid-cols-2 gap-12 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="w-full lg:order-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                     </span>&lt;img src="https://images.unsplash.com/photo-1581388234863-2751a0b5a5c3?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Stack of high-quality red bricks" className="rounded-xl shadow-card w-full h-auto" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="lg:order-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;h2 className="text-base font-semibold text-primary tracking-wider uppercase"&gt;Construction Materials&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p className="mt-2 text-3xl font-extrabold text-coal-dark tracking-tight sm:text-4xl"&gt;High-Strength Durable Bricks&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p className="mt-4 text-lg text-coal-medium"&gt;More than a simple building material, our bricks are the fundamental components of architectural vision. Manufactured with scientific precision, each class of brick is designed for a specific purpose, offering an optimal balance of aesthetic appeal, structural integrity, and long-term performance.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                     </span>&lt;div className="mt-8 overflow-x-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;table className="min-w-full divide-y divide-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;thead className="bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Brick Class&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Min. Strength&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Main Uses&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;tbody className="bg-white divide-y divide-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>{brickData.map(brick =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;tr key={brick.class}&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                        </span>&lt;td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;{brick.class}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                        </span>&lt;td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;{brick.strength}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                        </span>&lt;td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;{brick.uses}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Industries Page ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const IndustriesPage = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const industries = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ name: 'Brick Manufacturing', icon: FactoryIcon, description: 'As our primary focus, we provide high-GCV coal that ensures optimal kiln temperature and superior brick quality, alongside our own high-strength bricks.', image: 'https://images.unsplash.com/photo-1559824724-4665413c3a64?q=80&amp;w=600&amp;auto=format&amp;fit=crop' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ name: 'Cement Industries', icon: BuildingIcon, description: 'We supply Petcoke and high-energy coal, critical for the intense heat required in cement clinker production, ensuring efficiency and quality.', image: 'https://images.unsplash.com/photo-1517826963953-320c28271a51?q=80&amp;w=600&amp;auto=format&amp;fit=crop' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ name: 'Power Generation', icon: HardHatIcon, description: 'Our thermal coal is a reliable fuel source for power plants, providing consistent energy output to meet the nation\'s electricity demands.', image: 'https://images.unsplash.com/photo-1473341304170-971d67526356?q=80&amp;w=600&amp;auto=format&amp;fit=crop' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ name: 'Other Kiln-Based Industries', icon: HomeIcon, description: 'We are open to supplying our quality fuels to various other industries that rely on kilns, such as lime, ceramics, and more.', image: 'https://images.unsplash.com/photo-1599421493669-3d5a4943586a?q=80&amp;w=600&amp;auto=format&amp;fit=crop' }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;PageHeader title="Industries We Serve" subtitle="Providing the energy and materials that fuel national growth." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="py-16 sm:py-24 bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                             </span>&lt;div className="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p className="mt-2 text-3xl font-extrabold text-coal-dark tracking-tight sm:text-4xl"&gt;Your Partner in Industrial Excellence&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p className="mt-4 max-w-3xl mx-auto text-xl text-coal-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>We understand the unique energy and material requirements of various heavy industries. Our products are engineered to deliver performance, efficiency, and reliability where it matters most.</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="mt-16 grid gap-8 md:grid-cols-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>{industries.map(industry =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div key={industry.name} className="bg-coal-light rounded-xl shadow-card overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;img src={industry.image} alt={industry.name} className="w-full h-56 object-cover" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div className="p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div className="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;div className="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                    </span>&lt;industry.icon className="h-7 w-7" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                                </span>&lt;h3 className="text-2xl font-bold text-coal-dark"&gt;{industry.name}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;p className="mt-4 text-coal-medium"&gt;{industry.description}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Gallery Page ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const GalleryPage = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const [filter, setFilter] = useState('All');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const images = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&amp;w=800&amp;auto=format&amp;fit=crop', category: 'Coal', title: 'Coal Stockyard' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ src: 'https://images.unsplash.com/photo-1581388234863-2751a0b5a5c3?q=80&amp;w=800&amp;auto=format&amp;fit=crop', category: 'Bricks', title: 'Quality Red Bricks' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ src: 'https://images.unsplash.com/photo-1521625383333-53a510532958?q=80&amp;w=800&amp;auto=format&amp;fit=crop', category: 'Delivery', title: 'Delivery Fleet' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ src: 'https://images.unsplash.com/photo-1559824724-4665413c3a64?q=80&amp;w=800&amp;auto=format&amp;fit=crop', category: 'Projects', title: 'Brick Production' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ src: 'https://images.unsplash.com/photo-1622357170435-434042837334?q=80&amp;w=800&amp;auto=format&amp;fit=crop', category: 'Coal', title: 'High-GCV Coal' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ src: 'https://images.unsplash.com/photo-1508344579543-d3d3a1b6c643?q=80&amp;w=800&amp;auto=format&amp;fit=crop', category: 'Bricks', title: 'Architectural Bricks' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ src: 'https://images.unsplash.com/photo-1517826963953-320c28271a51?q=80&amp;w=800&amp;auto=format&amp;fit=crop', category: 'Projects', title: 'Industrial Application' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ src: 'https://images.unsplash.com/photo-1605152276897-4f618f831968?q=80&amp;w=800&amp;auto=format&amp;fit=crop', category: 'Projects', title: 'Satisfied Client Site' }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const filteredImages = filter === 'All' ? images : images.filter(img =&gt; img.category === filter);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;PageHeader title="Our Gallery" subtitle="A visual journey through our products, processes, and projects." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="py-16 sm:py-24 bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="flex justify-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="flex space-x-2 sm:space-x-4 bg-coal-light p-2 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>{['All', 'Coal', 'Bricks', 'Delivery', 'Projects'].map(cat =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;button key={cat} onClick={() =&gt; setFilter(cat)}</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>className={`px-4 py-2 text-sm sm:text-base font-semibold rounded-md transition-colors ${filter === cat ? 'bg-primary text-white shadow' : 'text-coal-medium hover:bg-gray-300'}`}&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>{cat}</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>{filteredImages.map((image, index) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div key={index} className="group relative block bg-black rounded-xl overflow-hidden shadow-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;img src={image.src} alt={image.title} className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-60" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div className="absolute bottom-0 left-0 p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;h3 className="text-white text-lg font-bold"&gt;{image.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;p className="text-secondary text-sm font-semibold"&gt;{image.category}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Contact Page ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ContactPage = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;PageHeader title="Contact Us" subtitle="Let's build together. Reach out to our team today." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="py-16 sm:py-24 bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="grid lg:grid-cols-3 gap-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="lg:col-span-1 space-y-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-xl font-bold text-coal-dark flex items-center gap-3"&gt;&lt;MapPinIcon className="w-6 h-6 text-primary"/&gt; Head Office&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p className="mt-2 text-coal-medium"&gt;123 Industrial Estate,&lt;br/&gt;Guindy, Chennai, Tamil Nadu 600032&lt;br/&gt;India&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-xl font-bold text-coal-dark flex items-center gap-3"&gt;&lt;PhoneIcon className="w-6 h-6 text-primary"/&gt; Phone&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;a href="tel:+919444139814" className="mt-2 text-coal-medium hover:text-primary block"&gt;+91 94441 39814&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                     </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-xl font-bold text-coal-dark flex items-center gap-3"&gt;&lt;MailIcon className="w-6 h-6 text-primary"/&gt; Email&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;a href="mailto:sales@haripriya.co" className="mt-2 text-coal-medium hover:text-primary block"&gt;sales@haripriya.co&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="lg:col-span-2 bg-coal-light p-8 rounded-xl shadow-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;h2 className="text-2xl font-bold text-coal-dark"&gt;Send Us a Message&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;form className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;label htmlFor="full-name" className="block text-sm font-medium text-gray-700"&gt;Full Name&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div className="mt-1"&gt;&lt;input type="text" name="full-name" id="full-name" autoComplete="name" className="py-3 px-4 block w-full shadow-sm focus:ring-primary focus:border-primary border-gray-300 rounded-md" /&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;label htmlFor="email" className="block text-sm font-medium text-gray-700"&gt;Email&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div className="mt-1"&gt;&lt;input id="email" name="email" type="email" autoComplete="email" className="py-3 px-4 block w-full shadow-sm focus:ring-primary focus:border-primary border-gray-300 rounded-md" /&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div className="sm:col-span-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;label htmlFor="phone-number" className="block text-sm font-medium text-gray-700"&gt;Phone Number&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div className="mt-1"&gt;&lt;input type="text" name="phone-number" id="phone-number" autoComplete="tel" className="py-3 px-4 block w-full shadow-sm focus:ring-primary focus:border-primary border-gray-300 rounded-md" /&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div className="sm:col-span-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;label htmlFor="message" className="block text-sm font-medium text-gray-700"&gt;Message&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;div className="mt-1"&gt;&lt;textarea id="message" name="message" rows="4" className="py-3 px-4 block w-full shadow-sm focus:ring-primary focus:border-primary border-gray-300 rounded-md"&gt;&lt;/textarea&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;div className="sm:col-span-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;button type="submit" className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"&gt;Send Message&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;div className="w-full h-96 bg-gray-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;iframe</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.183180299693!2d80.2048536757977!3d13.02395781404172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52671e48bf4b9b%3A0x495912285e684533!2sGuindy%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1689859210000!5m2!1sen!2sin"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>width="100%"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>height="100%"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>style={{ border: 0 }}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>allowFullScreen=""</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>loading="lazy"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>referrerPolicy="no-referrer-when-downgrade"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&gt;&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Footer Component ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const Footer = ({ onNavClick }) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const footerNav = [ { name: "Home", href: "/" }, { name: "About", href: "/about" }, { name: "Products", href: "/products" }, { name: "Gallery", href: "/gallery" }, { name: "Contact", href: "/contact" }];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;footer className="bg-coal-dark text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="xl:grid xl:grid-cols-3 xl:gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="space-y-8 xl:col-span-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="/" onClick={(e) =&gt; {e.preventDefault(); onNavClick('/')}} className="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div className="w-12 h-12 bg-gradient-to-br from-secondary to-primary rounded-lg flex items-center justify-center"&gt;&lt;span className="text-white font-bold text-2xl"&gt;H&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div&gt;&lt;h1 className="text-2xl font-bold text-white"&gt;Haripriya &amp; Co.&lt;/h1&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p className="text-gray-300 text-base"&gt;Your premier source for imported coal and quality bricks in Chennai and across India.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="md:grid md:grid-cols-2 md:gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-sm font-semibold text-gray-200 tracking-wider uppercase"&gt;Navigation&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;ul className="mt-4 space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>{footerNav.map(item =&gt; (&lt;li key={item.name}&gt;&lt;a href={item.href} onClick={(e) =&gt; {e.preventDefault(); onNavClick(item.href)}} className="text-base text-gray-300 hover:text-white"&gt;{item.name}&lt;/a&gt;&lt;/li&gt;))}</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div className="mt-12 md:mt-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-sm font-semibold text-gray-200 tracking-wider uppercase"&gt;Contact&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;ul className="mt-4 space-y-4 text-base text-gray-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;li&gt;&lt;p&gt;123 Industrial Estate,&lt;br/&gt;Chennai, Tamil Nadu, India&lt;/p&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;li&gt;&lt;a href="tel:+919444139814" className="hover:text-white"&gt;+91 94441 39814&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;li&gt;&lt;a href="mailto:sales@haripriya.co" className="hover:text-white"&gt;sales@haripriya.co&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div className="md:grid md:grid-cols-1 md:gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-sm font-semibold text-gray-200 tracking-wider uppercase"&gt;Connect with us&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;p className="mt-4 text-base text-gray-300"&gt;Get quick support or a quote via WhatsApp.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;a href="https://wa.me/919444139814?text=Hi%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" rel="noopener noreferrer"</p>
+<p class="p1"><span class="Apple-converted-space">                                          </span>className="mt-4 inline-flex items-center justify-center rounded-md text-sm font-medium text-white h-10 px-4 py-2 bg-green-600 hover:bg-green-700"&gt;Chat on WhatsApp&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div className="mt-12 border-t border-gray-700 pt-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p className="text-base text-gray-400 xl:text-center"&gt;&amp;copy; {new Date().getFullYear()} Haripriya &amp; Co. All rights reserved.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Main App Component ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const App = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const [activePath, setActivePath] = useState('/');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>useEffect(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>window.scrollTo(0, 0);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, [activePath]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const renderContent = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>switch (activePath) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case '/': return &lt;HomePage onNavClick={setActivePath} /&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case '/about': return &lt;AboutPage /&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case '/products': return &lt;ProductsPage /&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case '/industries': return &lt;IndustriesPage /&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case '/gallery': return &lt;GalleryPage /&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case '/contact': return &lt;ContactPage /&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>default: return &lt;HomePage onNavClick={setActivePath} /&gt;;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;Header activePath={activePath} onNavClick={setActivePath} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>{renderContent()}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;Footer onNavClick={setActivePath} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const container = document.getElementById('root');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const root = ReactDOM.createRoot(container);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>root.render(&lt;App /&gt;);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
